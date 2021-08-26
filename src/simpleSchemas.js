@@ -728,7 +728,8 @@ export const CartItem = new SimpleSchema({
   },
   "createdAt": Date,
   "imageURLs":{
-    type:ImageSizes
+    type:ImageSizes,
+    optional: true
   },
   "metafields": {
     type: Array,
