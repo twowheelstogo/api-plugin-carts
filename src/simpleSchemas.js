@@ -127,8 +127,14 @@ export const CustomCartAddress = new SimpleSchema({
     type: Metaddress,
     optional: true
   },
-  "receiver": String,
-  "phone": String
+  "receiver": {
+    type: String,
+    optional: true
+  },
+  "phone": {
+    type: String,
+    optional: true
+  }
 });
 
 /**
