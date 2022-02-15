@@ -48,85 +48,87 @@ const Metafield = new SimpleSchema({
   }
 });
 export const Geolocation = new SimpleSchema({
- "latitude": {
-   type: Number
- },
- "longitude": {
-   type: Number
- }
+  "latitude": {
+    type: Number
+  },
+  "longitude": {
+    type: Number
+  }
 })
 export const DistanceMeta = new SimpleSchema({
   "value": {
     type: Number,
-    optional:true
+    optional: true
   },
   "text": {
     type: String,
-    optional:true
+    optional: true
   },
-  "branchId":{
+  "branchId": {
     type: String,
     optional: true
   },
-  "branch":{
+  "branch": {
     type: String,
     optional: true
   }
 })
 
 export const Metaddress = new SimpleSchema({
-  "administrative_area_level_1":{
+  "administrative_area_level_1": {
     type: String,
     optional: true
   },
-  "administrative_area_level_2":{
+  "administrative_area_level_2": {
     type: String,
     optional: true
   },
-  "neighborhood":{
+  "neighborhood": {
     type: String,
     optional: true
   },
-  "street_address":{
+  "street_address": {
     type: String,
     optional: true
   },
-  "sublocality":{
+  "sublocality": {
     type: String,
     optional: true
   },
-  "distance":{
+  "distance": {
     type: DistanceMeta,
     optional: true
   }
 })
 export const CustomCartAddress = new SimpleSchema({
- "_id": {
-   type: String,
-   optional: true
- },
- "description":{
-   type:String,
-   label: "Description"
- },
- "reference":{
-   type:String,
-   label:"Reference",
-   optional:true
- },
- "address":{
-   type:String,
-   label:"Address"
- },
- "geolocation":{
-   type:Geolocation,
-   label:"geolocation",
-   optional:true
- },
- "metaddress": {
-  type: Metaddress,
-  optional: true
-  }
+  "_id": {
+    type: String,
+    optional: true
+  },
+  "description": {
+    type: String,
+    label: "Description"
+  },
+  "reference": {
+    type: String,
+    label: "Reference",
+    optional: true
+  },
+  "address": {
+    type: String,
+    label: "Address"
+  },
+  "geolocation": {
+    type: Geolocation,
+    label: "geolocation",
+    optional: true
+  },
+  "metaddress": {
+    type: Metaddress,
+    optional: true
+  },
+  "receiver": String,
+  "phone": String
 });
 
 /**
@@ -720,19 +722,19 @@ const CartItemAttribute = new SimpleSchema({
   }
 });
 const ImageSizes = new SimpleSchema({
-  "large":{
+  "large": {
     type: String
   },
-   "medium":{
+  "medium": {
     type: String
   },
-  "original":{
+  "original": {
     type: String
   },
-  "small":{
+  "small": {
     type: String
   },
-  "thumbnail":{
+  "thumbnail": {
     type: String
   },
 });
@@ -786,8 +788,8 @@ export const CartItem = new SimpleSchema({
     optional: true
   },
   "createdAt": Date,
-  "imageURLs":{
-    type:ImageSizes,
+  "imageURLs": {
+    type: ImageSizes,
     optional: true
   },
   "metafields": {
@@ -857,41 +859,41 @@ export const CartItem = new SimpleSchema({
 });
 export const BillingDetails = new SimpleSchema({
   customerName: {
-      type: String,
-      optional: true
+    type: String,
+    optional: true
   },
-  nit:{
-      type: String,
-      max: 9,
-      optional: true
+  nit: {
+    type: String,
+    max: 9,
+    optional: true
   },
-  address:{
-      type: String,
-      optional:true
-    }
-  });
- /**
- * @name Gift
- * @memberof Schemas
- * @type {SimpleSchema}
- * @property {String} sender optional
- * @property {String} receiver optional
- * @property {String} message optional
- */
+  address: {
+    type: String,
+    optional: true
+  }
+});
+/**
+* @name Gift
+* @memberof Schemas
+* @type {SimpleSchema}
+* @property {String} sender optional
+* @property {String} receiver optional
+* @property {String} message optional
+*/
 export const Gift = new SimpleSchema({
   sender: {
-      type: String,
-      optional:true
+    type: String,
+    optional: true
   },
   receiver: {
-      type: String,
-      optional:true
+    type: String,
+    optional: true
   },
   message: {
-      type: String,
-      optional:true
+    type: String,
+    optional: true
   }
-}) 
+})
 /**
  * @name Cart
  * @memberof Schemas
@@ -1005,12 +1007,12 @@ export const Cart = new SimpleSchema({
     type: Date,
     optional: true
   },
-  "billingDetails":{
+  "billingDetails": {
     type: BillingDetails,
-    optional:true
+    optional: true
   },
-  "giftNote":{
+  "giftNote": {
     type: Gift,
-    optional:true
+    optional: true
   }
 });
